@@ -17,14 +17,14 @@ body {
   }
 
 .heading {
-    color: green;
+    color: #FF7518;
     font-weight: bold;
     font-size: 30px;
     text-transform: uppercase;
 }
 
 .sub-heading {
-    color: green;
+    color: #FF7518;
     font-weight: bold;
     font-size: 20px;
     text-transform: uppercase;
@@ -38,7 +38,7 @@ body {
 
 
 .border-left {
-    border-left: 4px solid green;
+    border-left: 4px solid #FF7518;
 }
 
 .section-bold {
