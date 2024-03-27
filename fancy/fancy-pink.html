@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumify | Fancy Pink Template</title>
+    <link rel="stylesheet" href="../css/fancy-pink.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 mt-5 px-5" id="stylingSection">
+          <div class="mb-3">
+            <h1 class="text-center mb-3">Build Your Resume</h1>
+            <p class="text-center">You're Editing The Fancy Pink Template.</p>
+          </div>
+          <div class="mb-3">
+            <div class="ra error-alert" style="display: none"></div>
+          </div>
+          <div class="mb-5">
+            <h3>Styling</h3>
+            <hr />
+            <div class="mb-3">
+              <label for="font-family-selector" class="form-label"
+                >Select Font Family</label
+              >
+              <select id="font-family-selector" class="form-select rounded-0">
+                <option
+                  value="'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                >
+                  Default (Franklin Gothic)
+                </option>
+                <option value="'Montserrat', sans-serif">Montserrat</option>
+                <option value="'Noto Sans', sans-serif">Noto Sans</option>
+                <option value="'Poppins', sans-serif">Poppins</option>
+                <option value="'Reddit Mono', monospace">Reddit Mono</option>
+                <option value="'Roboto', sans-serif">Roboto</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="heading-font-size">Select Heading Size</label>
+              <input
+                type="number"
+                class="form-control rounded-0"
+                id="heading-font-size"
+                value="30"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="sub-heading-font-size">Select Sub-Heading Size</label>
+              <input
+                type="number"
+                class="form-control rounded-0"
+                id="sub-heading-font-size"
+                value="20"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="body-font-size">Select Body Size</label>
+              <input
+                type="number"
+                class="form-control rounded-0"
+                id="body-font-size"
+                value="16"
+              />
+            </div>
+          </div>
+          <div class="mb-5">
+            <h3>Upload Resume Image</h3>
+            <hr />
+            <input
+              type="file"
+              class="form-control rounded-0"
+              id="image-upload"
+              accept="image/*"
+              style="display: none"
+            />
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              onclick="uploadImage()"
+            >
+              Upload Image
+            </button>
+          </div>
+          <div class="mb-5">
+            <h3>Add Information</h3>
+            <hr />
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0"
+              onclick="addSkills()"
+            >
+              Add Skills
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0"
+              onclick="addWorkExperience()"
+            >
+              Add Work Experiece
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0"
+              onclick="addEducation()"
+            >
+              Add Education
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0"
+              onclick="addReferencePlaceholder()"
+            >
+              Add References
+            </button>
+          </div>
+          <div class="mb-3">
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 w-100"
+              onclick="saveResume()"
+            >
+              Save Resume
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+          <div class="resume-container">
+            <div class="row">
+              <div class="col-12 text-center">
+                <div class="heading" contenteditable="true">
+                  john jacob jingleheimer schmidt
+                </div>
+                <hr class="fancy-hr-lg" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="image text-center">
+                  <img
+                    id="resume-image"
+                    src="https://placehold.co/800"
+                    class="img-fluid res-image"
+                    alt=""
+                  />
+                </div>
+                <hr class="fancy-hr-sm" />
+                <div class="contact">
+                  <div class="mb-2 body">
+                    <i class="fa-solid fa-phone" style="margin-right: 8px"></i>
+                    (123) 456-7890
+                  </div>
+                  <div class="mb-2 body">
+                    <i
+                      class="fa-solid fa-envelope"
+                      style="margin-right: 8px"
+                    ></i>
+                    john.jacob@gmail.com
+                  </div>
+                  <div class="mb-2 body">
+                    <i
+                      class="fa-solid fa-map-pin"
+                      style="margin-right: 8px"
+                    ></i>
+                    St. John's, Newfoundland
+                  </div>
+                </div>
+                <hr class="fancy-hr-sm" />
+                <div class="skills">
+                  <div class="sub-heading text-center mb-2">Skills</div>
+                  <div class="body" id="skillsSection"></div>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="objective">
+                  <div class="sub-heading mb-3">Objective</div>
+                  <div class="body" contenteditable="true">
+                    Enter your objective here.
+                  </div>
+                </div>
+                <hr class="fancy-hr-sm" />
+                <div class="jobs">
+                  <div class="sub-heading mb-2">Job Experience</div>
+                  <div class="jobExperience">
+                    <div class="d-flex justify-content-between">
+                      <div class="section-bold" contenteditable="true">
+                        Company Name
+                      </div>
+                      <div class="text-muted" contenteditable="true">
+                        <i
+                          class="fa-solid fa-calendar"
+                          style="margin-right: 5px"
+                        ></i>
+                        January 1st, 1900 - Present
+                      </div>
+                    </div>
+                    <div class="body" contenteditable="true">
+                      <ul>
+                        <li>Duty</li>
+                        <li>Duty</li>
+                        <li>Duty</li>
+                        <li>Duty</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <hr class="fancy-hr-sm" />
+                <div class="edu">
+                  <div class="sub-heading mb-2">Education</div>
+                  <div class="educationArea mb-3">
+                    <div class="d-flex justify-content-between">
+                      <div class="section-bold" contenteditable="true">MUN</div>
+                      <div class="text-muted" contenteditable="true">
+                        <i
+                          class="fa-solid fa-calendar"
+                          style="margin-right: 5px"
+                        ></i>
+                        January 1st, 1900 - Present
+                      </div>
+                    </div>
+                    <div class="body" contenteditable="true">
+                      ​​You might want to include your GPA here and a brief
+                      summary of relevant coursework, awards, and honors.​
+                    </div>
+                  </div>
+                </div>
+                <hr class="fancy-hr-sm" />
+                <div class="refs">
+                  <div class="sub-heading mb-2">References</div>
+                  <div id="referencesArea">
+                    <div class="reference mb-3" id="defaultRef">
+                      References available upon request.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function uploadImage() {
+        // Trigger click event on the file input element
+        document.getElementById("image-upload").click();
+      }
+
+      // Function to handle image upload
+      document
+        .getElementById("image-upload")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0]; // Get the uploaded file
+          const img = document.getElementById("resume-image");
+
+          // Check if a file is selected
+          if (file) {
+            const reader = new FileReader();
+
+            // Callback function to set the uploaded image as the src attribute
+            reader.onload = function (event) {
+              img.src = event.target.result;
+            };
+
+            // Read the file as a data URL
+            reader.readAsDataURL(file);
+          }
+        });
+
+      function saveResume() {
+        const resumeContainer = document.querySelector(".resume-container");
+
+        html2pdf()
+          .from(resumeContainer)
+          .set({
+            filename: "resume.pdf",
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+          })
+          .save();
+      }
+
+      // Function to add work experience section
+      function addWorkExperience() {
+        const jobExperiences = document.querySelectorAll(".jobExperience");
+        const newJobExperience = jobExperiences[0].cloneNode(true);
+        jobExperiences[0].parentNode.insertBefore(
+          newJobExperience,
+          jobExperiences[0]
+        );
+      }
+
+      function addWorkExperience() {
+        const jobExperiences = document.querySelectorAll(".jobExperience");
+        const newJobExperience = jobExperiences[0].cloneNode(true);
+        jobExperiences[0].parentNode.insertBefore(
+          newJobExperience,
+          jobExperiences[0]
+        );
+      }
+
+      function addEducation() {
+        const education = document.querySelectorAll(".educationArea");
+        const neweducation = education[0].cloneNode(true);
+        education[0].parentNode.insertBefore(neweducation, education[0]);
+      }
+
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        const jobExperience = e.target.closest(".jobExperience");
+        const education = e.target.closest(".educationArea");
+        const skill = e.target.closest(".skill");
+
+        if (jobExperience) {
+          if (
+            jobExperience.parentNode.querySelectorAll(".jobExperience").length >
+            1
+          ) {
+            jobExperience.parentNode.removeChild(jobExperience);
+          } else {
+            let errorAlert = document.querySelector(".error-alert");
+            errorAlert.style.display = "block";
+            errorAlert.textContent =
+              "You need to have at least 1 job experience field.";
+            setTimeout(() => {
+              errorAlert.style.display = "none";
+            }, 3000);
+          }
+        } else if (education) {
+          if (
+            education.parentNode.querySelectorAll(".educationArea").length > 1
+          ) {
+            education.parentNode.removeChild(education);
+          } else {
+            let errorAlert = document.querySelector(".error-alert");
+            errorAlert.style.display = "block";
+            errorAlert.textContent =
+              "You need to have at least 1 education field.";
+            setTimeout(() => {
+              errorAlert.style.display = "none";
+            }, 3000);
+          }
+        } else if (skill) {
+          if (skill.parentNode.querySelectorAll(".skill").length > 1) {
+            const dot = skill.previousElementSibling;
+            if (dot && dot.classList.contains("dot")) {
+              dot.parentNode.removeChild(dot);
+            }
+            skill.parentNode.removeChild(skill);
+          } else {
+            let errorAlert = document.querySelector(".error-alert");
+            errorAlert.style.display = "block";
+            errorAlert.textContent = "You need to have at least 1 skill.";
+            setTimeout(() => {
+              errorAlert.style.display = "none";
+            }, 3000);
+          }
+        }
+      });
+
+      // Font family selector
+      document
+        .getElementById("font-family-selector")
+        .addEventListener("change", function () {
+          const selectedFont = this.value;
+          document.querySelector(".resume-container").style.fontFamily =
+            selectedFont;
+        });
+
+      document
+        .getElementById("heading-font-size")
+        .addEventListener("change", function () {
+          const headingSize = this.value;
+          const headingElements = document.querySelectorAll(
+            ".resume-container .heading"
+          );
+
+          headingElements.forEach(function (headingElement) {
+            headingElement.style.fontSize = headingSize + "px";
+          });
+        });
+
+      document
+        .getElementById("sub-heading-font-size")
+        .addEventListener("change", function () {
+          const subheadingSize = this.value;
+          const subheadingElements = document.querySelectorAll(
+            ".resume-container .sub-heading"
+          );
+
+          subheadingElements.forEach(function (subheadingElement) {
+            subheadingElement.style.fontSize = subheadingSize + "px";
+          });
+        });
+
+      document
+        .getElementById("body-font-size")
+        .addEventListener("change", function () {
+          const bodySize = this.value;
+          const bodyElements = document.querySelectorAll(
+            ".resume-container .body"
+          );
+
+          bodyElements.forEach(function (bodyElement) {
+            bodyElement.style.fontSize = bodySize + "px";
+          });
+        });
+
+      function addReferencePlaceholder() {
+        const defaultRef = document.getElementById("defaultRef");
+
+        defaultRef.style.display = "none";
+        // Create a new reference element
+        var referenceElement = document.createElement("div");
+        referenceElement.classList.add("reference", "mb-3");
+
+        // Create elements for name, role, and contact
+        var nameElement = document.createElement("div");
+        nameElement.classList.add("section-bold");
+        nameElement.setAttribute("contenteditable", "true");
+        nameElement.textContent = "John Doe";
+
+        var roleElement = document.createElement("div");
+        roleElement.classList.add("text-muted");
+        roleElement.setAttribute("contenteditable", "true");
+        roleElement.textContent = "Friend";
+
+        var contactElement = document.createElement("div");
+        contactElement.classList.add("body");
+        contactElement.setAttribute("contenteditable", "true");
+        contactElement.textContent = "(123) 456-7890";
+
+        // Append name, role, and contact elements to the reference element
+        referenceElement.appendChild(nameElement);
+        referenceElement.appendChild(roleElement);
+        referenceElement.appendChild(contactElement);
+
+        // Append the reference element to the references area
+        var referencesArea = document.getElementById("referencesArea");
+        referencesArea.appendChild(referenceElement);
+      }
+
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        const reference = e.target.closest(".reference");
+        if (
+          reference &&
+          reference.parentNode.querySelectorAll(".reference").length > 1
+        ) {
+          reference.parentNode.removeChild(reference);
+        }
+      });
+
+      function addSkills() {
+        // Create a new skill element
+        var skillElement = document.createElement("span");
+        skillElement.classList.add("skill");
+        skillElement.contentEditable = true;
+        skillElement.textContent = "Enter your skill";
+
+        // Create a dot separator element
+        var dotElement = document.createElement("span");
+        dotElement.classList.add("dot");
+        dotElement.textContent = " • ";
+
+        // Append the skill element to the skills section
+        var skillsSection = document.getElementById("skillsSection");
+        skillsSection.appendChild(skillElement);
+
+        // Append the dot separator if there are already skills present
+        if (skillsSection.children.length > 1) {
+          skillsSection.insertBefore(dotElement, skillElement);
+        }
+      }
+    </script>
+  </body>
+</html>
