@@ -3,6 +3,30 @@ function uploadImage() {
   document.getElementById("image-upload").click();
 }
 
+const panelBgColorPicker = document.getElementById("panelColor");
+const panelBgColor = document.getElementById("colPanel");
+const accentHeading = document.querySelectorAll(".accentHeading");
+const panelFontColorPicker = document.getElementById("panelFontColor");
+const colPanel = document.getElementById("colPanel");
+
+panelFontColorPicker.addEventListener("input", function () {
+  const fontColor = panelFontColorPicker.value;
+
+  colPanel.querySelectorAll("*").forEach((element) => {
+    element.style.color = fontColor;
+  });
+});
+
+panelBgColorPicker.addEventListener("input", function () {
+  panelBgColor.style.backgroundColor = panelBgColorPicker.value;
+  
+  const darkerShade = tinycolor(panelBgColorPicker.value).darken(5).toString();
+  
+   accentHeading.forEach((heading) => {
+    heading.style.color = darkerShade;
+   });
+  });
+
 // Function to handle image upload
 document
   .getElementById("image-upload")
@@ -31,7 +55,7 @@ function saveResume() {
     .from(resumeContainer)
     .set({
       filename: "resume.pdf",
-      html2canvas: { scale: 2 },
+      html2canvas: { scale: 1 },
       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
     })
     .save();

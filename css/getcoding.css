@@ -8,7 +8,7 @@ body {
 }
 
 .resume-container {
-  width: 210mm; /* Set width to match A4 paper width */
+  min-width: 210mm; /* Set width to match A4 paper width */
   min-height: 297mm; /* Set height to match A4 paper height */
   background-color: white; /* Optional: Set background color */
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -83,6 +83,7 @@ body {
   max-width: 150px;
   max-height: 150px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .gh {

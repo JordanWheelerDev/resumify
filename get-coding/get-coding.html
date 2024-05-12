@@ -15,11 +15,17 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.6.0/tinycolor.min.js"
+      integrity="sha512-AvCfbOQzCVi2ctVWF4m89jLwTn/zVPJuS7rhiKyY3zqyCdbPqtvNa0I628GJqPytbowfFjkAGOpq85E5kQc40Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
-        <div class="col-md-5 mt-5 px-5" id="stylingSection">
+        <div class="col-md-3 mt-5 px-5" id="stylingSection">
           <div class="mb-3">
             <h1 class="text-center mb-3">Build Your Resume</h1>
             <p class="text-center">You're Editing The Get Coding Template.</p>
@@ -72,6 +78,26 @@
                 class="form-control rounded-0"
                 id="body-font-size"
                 value="16"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="panelColor"
+                >Select Left Panel Background Colour</label
+              >
+              <input
+                type="color"
+                class="form-control rounded-0"
+                id="panelColor"
+                value="#212121"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="panelFontColor">Select Left Panel Font Colour</label>
+              <input
+                type="color"
+                class="form-control rounded-0"
+                id="panelFontColor"
+                value="#fff"
               />
             </div>
           </div>
@@ -135,10 +161,14 @@
             </button>
           </div>
         </div>
-        <div class="col-md-7 d-flex justify-content-end">
+        <div class="col-md-9 d-flex justify-content-end">
           <div class="resume-container">
             <div class="row h-100">
-              <div class="col-lg-4" style="background-color: #212121">
+              <div
+                class="col-lg-4"
+                id="colPanel"
+                style="background-color: #212121; height: 100%"
+              >
                 <div class="p-3">
                   <div class="mb-4">
                     <div class="image text-center">
@@ -218,7 +248,12 @@
                 <div class="p-5">
                   <div id="aboutMe">
                     <div class="mb-4">
-                      <div class="heading mb-1">About Me</div>
+                      <div
+                        class="heading mb-1 accentHeading"
+                        id="accentHeading"
+                      >
+                        About Me
+                      </div>
                       <div class="body">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Dolor asperiores a, labore sapiente atque eius
@@ -231,7 +266,9 @@
                   </div>
                   <div id="workExp">
                     <div class="mb-2">
-                      <div class="heading">Experience</div>
+                      <div class="heading accentHeading" id="accentHeading">
+                        Experience
+                      </div>
                     </div>
                     <div class="jobExperience mb-4">
                       <div class="body">
@@ -253,7 +290,9 @@
                   </div>
                   <div id="edu">
                     <div class="mb-2">
-                      <div class="heading">Education</div>
+                      <div class="heading accentHeading" id="accentHeading">
+                        Education
+                      </div>
                     </div>
                     <div class="educationArea mb-4">
                       <div class="text-muted" contenteditable="true">
