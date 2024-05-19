@@ -8,14 +8,23 @@ body {
 }
 
 .resume-container {
-  min-width: 8in; /* Set width to match A4 paper width */
-  height: 11in; /* Set height to match A4 paper height */
   background-color: white; /* Optional: Set background color */
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
   /* Allow vertical scroll */
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .resume-container {
+    width: 100% !important;
+  }
+}
+
+.desktop-view {
+  width: 11in !important;
+  height: 8in !important;
 }
 
 .heading {
