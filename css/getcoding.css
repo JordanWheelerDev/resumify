@@ -3,37 +3,19 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #212125 !important;
+  background-color: #f7f7f7 !important;
   font-family: "Roboto", sans-serif !important;
 }
 
 .resume-container {
-  min-width: 210mm; /* Set width to match A4 paper width */
-  min-height: 297mm; /* Set height to match A4 paper height */
+  min-width: 8in; /* Set width to match A4 paper width */
+  height: 11in; /* Set height to match A4 paper height */
   background-color: white; /* Optional: Set background color */
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
   /* Allow vertical scroll */
   overflow-y: scroll;
   overflow-x: hidden;
-}
-
-.fancy-hr-lg {
-  height: 15px !important;
-  border: 0;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
-}
-
-.fancy-hr-md {
-  height: 10px !important;
-  border: 0;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
-}
-
-.fancy-hr-sm {
-  height: 5px !important;
-  border: 0;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
 }
 
 .heading {
@@ -62,10 +44,6 @@ body {
 
 .section-bold {
   font-weight: bold;
-}
-
-#stylingSection {
-  color: white !important;
 }
 
 .ra {

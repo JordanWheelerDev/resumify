@@ -55,7 +55,7 @@ function saveResume() {
     .from(resumeContainer)
     .set({
       filename: "resume.pdf",
-      html2canvas: { scale: 1 },
+      html2canvas: { scale: 2 },
       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
     })
     .save();
