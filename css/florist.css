@@ -1,61 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: #212125 !important;
-    font-family: 'Roboto', sans-serif!important;
+  padding: 0;
+  margin: 0;
+  background-color: #f7f7f7 !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .resume-container {
-    width: 210mm; /* Set width to match A4 paper width */
-    height: 297mm; /* Set height to match A4 paper height */
-    background-color: white; /* Optional: Set background color */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 20px 30px;
-    font-size: 16px;
+  background-color: white; /* Optional: Set background color */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 20px 30px;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .resume-container {
+    width: 100% !important;
   }
+}
 
 .heading {
-    color: green;
-    font-weight: bold;
-    font-size: 30px;
-    text-transform: uppercase;
+  color: green;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
 .sub-heading {
-    color: green;
-    font-weight: bold;
-    font-size: 20px;
-    text-transform: uppercase;
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .body {
-    color: black;
-    font-weight: normal;
-    font-size: 16px;
+  color: black;
+  font-weight: normal;
+  font-size: 16px;
 }
 
-
 .border-left {
-    border-left: 4px solid green;
+  border-left: 4px solid green;
 }
 
 .section-bold {
-    font-weight: bold;
-}
-
-#stylingSection {
-    color: white !important;
+  font-weight: bold;
 }
 
 .ra {
-    padding: 16px;
-    margin: 8px;
+  padding: 16px;
+  margin: 8px;
 }
 
 .error-alert {
-    border: 1px solid #ffb8b8;
-    background-color: rgba(255, 56, 56, 0.05);
-    border-radius: 5px;
+  border: 1px solid #ffb8b8;
+  background-color: rgba(255, 56, 56, 0.05);
+  border-radius: 5px;
 }
