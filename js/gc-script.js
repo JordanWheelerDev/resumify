@@ -51,6 +51,8 @@ document
 function saveResume() {
   const resumeContainer = document.querySelector(".resume-container");
 
+  resumeContainer.classList.add("desktop-view");
+
   html2pdf()
     .from(resumeContainer)
     .set({
