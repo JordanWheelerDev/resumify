@@ -62,58 +62,7 @@ function uploadImage() {
     education[0].parentNode.insertBefore(neweducation, education[0]);
   }
 
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-    const jobExperience = e.target.closest(".jobExperience");
-    const education = e.target.closest(".educationArea");
-    const skill = e.target.closest(".skill");
-
-    if (jobExperience) {
-      if (
-        jobExperience.parentNode.querySelectorAll(".jobExperience").length >
-        1
-      ) {
-        jobExperience.parentNode.removeChild(jobExperience);
-      } else {
-        let errorAlert = document.querySelector(".error-alert");
-        errorAlert.style.display = "block";
-        errorAlert.textContent =
-          "You need to have at least 1 job experience field.";
-        setTimeout(() => {
-          errorAlert.style.display = "none";
-        }, 3000);
-      }
-    } else if (education) {
-      if (
-        education.parentNode.querySelectorAll(".educationArea").length > 1
-      ) {
-        education.parentNode.removeChild(education);
-      } else {
-        let errorAlert = document.querySelector(".error-alert");
-        errorAlert.style.display = "block";
-        errorAlert.textContent =
-          "You need to have at least 1 education field.";
-        setTimeout(() => {
-          errorAlert.style.display = "none";
-        }, 3000);
-      }
-    } else if (skill) {
-      if (skill.parentNode.querySelectorAll(".skill").length > 1) {
-        const dot = skill.previousElementSibling;
-        if (dot && dot.classList.contains("dot")) {
-          dot.parentNode.removeChild(dot);
-        }
-        skill.parentNode.removeChild(skill);
-      } else {
-        let errorAlert = document.querySelector(".error-alert");
-        errorAlert.style.display = "block";
-        errorAlert.textContent = "You need to have at least 1 skill.";
-        setTimeout(() => {
-          errorAlert.style.display = "none";
-        }, 3000);
-      }
-    }
-  });
+  
 
   // Font family selector
   document
@@ -196,17 +145,6 @@ function uploadImage() {
     var referencesArea = document.getElementById("referencesArea");
     referencesArea.appendChild(referenceElement);
   }
-
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-    const reference = e.target.closest(".reference");
-    if (
-      reference &&
-      reference.parentNode.querySelectorAll(".reference").length > 1
-    ) {
-      reference.parentNode.removeChild(reference);
-    }
-  });
 
   function addSkills() {
     // Create a new skill element
