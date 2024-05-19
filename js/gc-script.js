@@ -50,7 +50,7 @@ document
 
 function saveResume() {
   const resumeContainer = document.querySelector(".resume-container");
-  
+
   html2pdf()
   .from(resumeContainer)
   .set({
