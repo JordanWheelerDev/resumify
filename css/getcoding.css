@@ -68,10 +68,10 @@ body {
 }
 
 .res-image {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 150px !important;
+  max-height: 150px !important;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover !important;
 }
 
 .gh {
