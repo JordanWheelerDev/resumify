@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 body {
   margin: 0;
   padding: 0;
@@ -50,4 +52,47 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.how-we-work-box {
+  border: 3px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative; /* Add this line */
+}
+
+.how-it-works-img {
+  width: 150px;
+  height: 150px;
+}
+
+.steps {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: "Roboto Mono", monospace;
+}
+
+.step-header {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  position: absolute; /* Add this line */
+  top: -30px; /* Adjust as needed */
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+}
+
+.step-one {
+  padding: 10px 30px;
+}
+
+.step-two {
+  padding: 10px 28px;
+}
+
+.step-three {
+  padding: 10px 28px;
 }
