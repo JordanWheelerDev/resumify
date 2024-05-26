@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 body {
   margin: 0;
   padding: 0;
@@ -50,4 +52,18 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.social-icon {
+  font-size: 80px;
+  transition: transform 0.7s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
+}
+
+.about-class {
+  font-family: "Radio Canada", sans-serif;
 }
