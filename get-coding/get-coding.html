@@ -171,13 +171,13 @@
                 style="background-color: #212121; height: 100%"
               >
                 <div class="p-3">
-                  <div class="mb-4">
-                    <div class="image text-center">
+                  <div class="mb-4 res-image-wrapper">
+                    <div class="res-image-container">
                       <img
                         id="resume-image"
                         src="https://placehold.co/800"
                         class="res-image"
-                        alt=""
+                        alt="Resume Image"
                       />
                     </div>
                   </div>
@@ -186,6 +186,7 @@
                       class="heading"
                       contenteditable="true"
                       style="color: white"
+                      id="name"
                     >
                       John Doe
                     </div>
@@ -195,6 +196,7 @@
                       class="sub-heading"
                       contenteditable="true"
                       style="color: rgb(224, 224, 224)"
+                      id="title"
                     >
                       Software developer, ex-camera truck Operator
                     </div>
@@ -207,6 +209,7 @@
                       class="body linking"
                       style="color: rgb(241, 241, 241)"
                       contenteditable="true"
+                      id="github"
                     >
                       https://github.com/myprofile
                     </div>
@@ -219,6 +222,7 @@
                       class="body linking"
                       style="color: rgb(241, 241, 241)"
                       contenteditable="true"
+                      id="linkedin"
                     >
                       https://linkedin.com/in/my-profile-123817291
                     </div>
@@ -231,6 +235,7 @@
                       class="body"
                       style="color: rgb(241, 241, 241)"
                       contenteditable="true"
+                      id="contact"
                     >
                       somethingsomething@gmail.com <br />
                       (709) 777 7777 <br />
@@ -241,7 +246,11 @@
                     <div class="mb-1 gh" style="color: rgb(241, 241, 241)">
                       <b>Skills</b>
                     </div>
-                    <div class="body" id="skillsSection"></div>
+                    <div
+                      class="body"
+                      id="skillsSection"
+                      contenteditable="true"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -251,11 +260,15 @@
                     <div class="mb-4">
                       <div
                         class="heading mb-1 accentHeading"
-                        id="accentHeading"
+                        id="aboutMeHeading"
                       >
                         About Me
                       </div>
-                      <div class="body">
+                      <div
+                        class="body"
+                        contenteditable="true"
+                        id="aboutMeContent"
+                      >
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Dolor asperiores a, labore sapiente atque eius
                         nulla nostrum velit ratione porro eos officiis eligendi
@@ -267,19 +280,31 @@
                   </div>
                   <div id="workExp">
                     <div class="mb-2">
-                      <div class="heading accentHeading" id="accentHeading">
+                      <div class="heading accentHeading" id="experienceHeading">
                         Experience
                       </div>
                     </div>
                     <div class="jobExperience mb-4">
                       <div class="body">
-                        <div class="text-muted" contenteditable="true">
+                        <div
+                          class="text-muted"
+                          contenteditable="true"
+                          id="workDates"
+                        >
                           JAN 1 1900 - PRESENT
                         </div>
-                        <div class="sub-heading" contenteditable="true">
+                        <div
+                          class="sub-heading"
+                          contenteditable="true"
+                          id="workTitle"
+                        >
                           Even Hand Group Inc - Contract Full-time
                         </div>
-                        <div class="body" contenteditable="true">
+                        <div
+                          class="body"
+                          contenteditable="true"
+                          id="workDescription"
+                        >
                           Successfully translated subject matter into concrete
                           design for newsletters, promotional materials and
                           sales collateral. Created design theme and graphics
@@ -291,26 +316,39 @@
                   </div>
                   <div id="edu">
                     <div class="mb-2">
-                      <div class="heading accentHeading" id="accentHeading">
+                      <div class="heading accentHeading" id="educationHeading">
                         Education
                       </div>
                     </div>
                     <div class="educationArea mb-4">
-                      <div class="text-muted" contenteditable="true">
+                      <div
+                        class="text-muted"
+                        contenteditable="true"
+                        id="eduDates"
+                      >
                         JAN 1 1900 - PRESENT
                       </div>
                       <div class="jobExperience" class="body">
-                        <div class="sub-heading" contenteditable="true">
+                        <div
+                          class="sub-heading"
+                          contenteditable="true"
+                          id="eduTitle"
+                        >
                           Full-Stack Software Development
                         </div>
                         <div
                           class="sub-heading"
                           contenteditable="true"
                           style="color: #5c5c5c"
+                          id="eduInstitution"
                         >
                           Get Coding
                         </div>
-                        <div class="body" contenteditable="true">
+                        <div
+                          class="body"
+                          contenteditable="true"
+                          id="eduDescription"
+                        >
                           I first enrolled in MUN with the expectation of being
                           an English major. After a semester, I had changed my
                           mind, and started down the path of Psychology. I was
