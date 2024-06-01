@@ -96,3 +96,17 @@ body {
 .step-three {
   padding: 10px 28px;
 }
+
+.social-icon {
+  font-size: 80px;
+  transition: transform 0.7s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
+}
+
+.about-class {
+  font-family: "Radio Canada", sans-serif;
+}
