@@ -21,6 +21,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <style>
+      @media print {
+        @page {
+          margin: 0;
+        }
+
+        #colPanel {
+          background-color: #212121 !important;
+          -webkit-print-color-adjust: exact;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -163,10 +175,10 @@
           </div>
         </div>
         <div class="col-md-9 d-flex justify-content-end">
-          <div class="resume-container">
+          <div class="resume-container" id="resume-container">
             <div class="row h-100">
               <div
-                class="col-4"
+                class="col-md-4"
                 id="colPanel"
                 style="background-color: #212121; height: 100%"
               >
@@ -254,7 +266,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-8">
+              <div class="col-md-8" id="infoPanel">
                 <div class="p-5">
                   <div id="aboutMe">
                     <div class="mb-4">

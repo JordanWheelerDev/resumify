@@ -19,50 +19,80 @@ panelFontColorPicker.addEventListener("input", function () {
 
 panelBgColorPicker.addEventListener("input", function () {
   panelBgColor.style.backgroundColor = panelBgColorPicker.value;
-  
+
   const darkerShade = tinycolor(panelBgColorPicker.value).darken(5).toString();
-  
+
   accentHeading.forEach((heading) => {
     heading.style.color = darkerShade;
   });
 });
 
 // Function to handle image upload
-document.getElementById("image-upload").addEventListener("change", function (event) {
-  const file = event.target.files[0]; // Get the uploaded file
-  const img = document.getElementById("resume-image");
+document
+  .getElementById("image-upload")
+  .addEventListener("change", function (event) {
+    const file = event.target.files[0]; // Get the uploaded file
+    const img = document.getElementById("resume-image");
 
-  // Check if a file is selected
-  if (file) {
-    const reader = new FileReader();
+    // Check if a file is selected
+    if (file) {
+      const reader = new FileReader();
 
-    // Callback function to set the uploaded image as the src attribute
-    reader.onload = function (event) {
-      img.src = event.target.result;
-    };
+      // Callback function to set the uploaded image as the src attribute
+      reader.onload = function (event) {
+        img.src = event.target.result;
+      };
 
-    // Read the file as a data URL
-    reader.readAsDataURL(file);
-  }
-});
+      // Read the file as a data URL
+      reader.readAsDataURL(file);
+    }
+  });
 
 function saveResume() {
-  const resumeContainer = document.querySelector(".resume-container");
+  const colPanel = document.getElementById("colPanel");
+  const infoPanel = document.getElementById("infoPanel");
 
-  html2pdf()
-  .from(resumeContainer)
-  .set({
-      filename: "resume.pdf",
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-  })
-  .save();
+  // Change class from col-md-4 to col-4
+  if (colPanel) {
+    colPanel.classList.remove("col-md-4");
+    colPanel.classList.add("col-4");
+  }
+
+  if (infoPanel) {
+    infoPanel.classList.remove("col-md-8");
+    infoPanel.classList.add("col-8");
+  }
+
+  // Save the resume contents
+  const printContents = document.getElementById("resume-container").innerHTML;
+  const originalContents = document.body.innerHTML;
+
+  // Print the contents
+  document.body.innerHTML = printContents;
+  window.print();
+
+  // Restore the original contents
+  document.body.innerHTML = originalContents;
+
+  // Restore the original class
+  if (colPanel) {
+    colPanel.classList.remove("col-4");
+    colPanel.classList.add("col-md-4");
+  }
+
+  if (infoPanel) {
+    infoPanel.classList.remove("col-8");
+    infoPanel.classList.add("col-md-8");
+  }
 }
 
 function addWorkExperience() {
   const jobExperiences = document.querySelectorAll(".jobExperience");
   const newJobExperience = jobExperiences[0].cloneNode(true);
-  jobExperiences[0].parentNode.insertBefore(newJobExperience, jobExperiences[0]);
+  jobExperiences[0].parentNode.insertBefore(
+    newJobExperience,
+    jobExperiences[0]
+  );
 }
 
 function addEducation() {
@@ -72,37 +102,49 @@ function addEducation() {
 }
 
 // Font family selector
-document.getElementById("font-family-selector").addEventListener("change", function () {
-  const selectedFont = this.value;
-  document.querySelector(".resume-container").style.fontFamily = selectedFont;
-});
-
-document.getElementById("heading-font-size").addEventListener("change", function () {
-  const headingSize = this.value;
-  const headingElements = document.querySelectorAll(".resume-container .heading");
-
-  headingElements.forEach(function (headingElement) {
-    headingElement.style.fontSize = headingSize + "px";
+document
+  .getElementById("font-family-selector")
+  .addEventListener("change", function () {
+    const selectedFont = this.value;
+    document.querySelector(".resume-container").style.fontFamily = selectedFont;
   });
-});
 
-document.getElementById("sub-heading-font-size").addEventListener("change", function () {
-  const subheadingSize = this.value;
-  const subheadingElements = document.querySelectorAll(".resume-container .sub-heading");
+document
+  .getElementById("heading-font-size")
+  .addEventListener("change", function () {
+    const headingSize = this.value;
+    const headingElements = document.querySelectorAll(
+      ".resume-container .heading"
+    );
 
-  subheadingElements.forEach(function (subheadingElement) {
-    subheadingElement.style.fontSize = subheadingSize + "px";
+    headingElements.forEach(function (headingElement) {
+      headingElement.style.fontSize = headingSize + "px";
+    });
   });
-});
 
-document.getElementById("body-font-size").addEventListener("change", function () {
-  const bodySize = this.value;
-  const bodyElements = document.querySelectorAll(".resume-container .body");
+document
+  .getElementById("sub-heading-font-size")
+  .addEventListener("change", function () {
+    const subheadingSize = this.value;
+    const subheadingElements = document.querySelectorAll(
+      ".resume-container .sub-heading"
+    );
 
-  bodyElements.forEach(function (bodyElement) {
-    bodyElement.style.fontSize = bodySize + "px";
+    subheadingElements.forEach(function (subheadingElement) {
+      subheadingElement.style.fontSize = subheadingSize + "px";
+    });
   });
-});
+
+document
+  .getElementById("body-font-size")
+  .addEventListener("change", function () {
+    const bodySize = this.value;
+    const bodyElements = document.querySelectorAll(".resume-container .body");
+
+    bodyElements.forEach(function (bodyElement) {
+      bodyElement.style.fontSize = bodySize + "px";
+    });
+  });
 
 // No references on Get Coding template, but keeping this function in the event
 // it should be added at a later date
@@ -175,16 +217,16 @@ function loadContent(id) {
 }
 
 // Add event listeners to save content on input
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const editableDivs = document.querySelectorAll('[contenteditable="true"]');
-  editableDivs.forEach(div => {
+  editableDivs.forEach((div) => {
     const id = div.id;
     if (id) {
       // Load saved content on page load
       loadContent(id);
 
       // Save content on input
-      div.addEventListener('input', () => saveContent(id));
+      div.addEventListener("input", () => saveContent(id));
     }
   });
 });
