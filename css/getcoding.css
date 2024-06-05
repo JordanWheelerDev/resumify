@@ -67,11 +67,22 @@ body {
   border-radius: 5px;
 }
 
-.res-image {
-  max-width: 150px !important;
-  max-height: 150px !important;
+.res-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.res-image-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
   border-radius: 50%;
-  object-fit: cover !important;
+}
+
+.res-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .gh {
